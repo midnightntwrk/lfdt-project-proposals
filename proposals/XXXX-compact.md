@@ -168,7 +168,43 @@ How does one know that it works._
 </mark>
 
 # Closure
-<mark>_**Closure** how do we know that the project succeeded. This has to
-be measurable if possible. Make references to successor projects if
-any._
-</mark>
+### **Project Closure: Success Criteria for Compact**
+
+The Compact project will be considered successfully completed when the following measurable criteria have been met. These criteria are organized by the major deliverables and goals of the project.
+
+#### **I. Language Specification & Documentation**
+
+The goal is to have a clear, unambiguous, and complete definition of the language that can be used by developers, auditors, and implementers.
+
+* **Language Reference Completeness:** The informal Compact Language Reference document fully describes 100% of the language features implemented in the compiler and used in the Standard Library. There are no compiler features that lack corresponding documentation.  
+* **Formal Specification Coverage:** The formal specification in Agda covers 100% of the language's static semantics (i.e., the complete type system). A formal proof exists demonstrating that the type system is sound.  
+* **Specification Consistency:** An external review by at least two developers (not on the core Compact team) confirms they can build a functionally equivalent "hello world" style contract using *only* the Language Reference, with no ambiguities found.  
+* **Standard Library Documentation:** Every function and module in the Compact Standard Library is documented with its type signature, purpose, parameters, and a usage example.
+
+#### **II. Compiler & Software Development Kit (SDK)**
+
+The goal is to provide a robust, correct, and usable compiler and set of tools for developers.
+
+* **Compiler Correctness & Test Coverage:** The compiler's test suite achieves a minimum of 90% code coverage. This suite must include tests for all language features, error conditions, and optimizations.  
+* **Reference Contracts:** At least 5 non-trivial reference smart contracts, covering key use cases (e.g., a private token, a sealed-bid auction, a multi-sig wallet), successfully compile, generate valid ZK proofs, and execute correctly on the target backend (Midnight Network).  
+* **Safety Feature Validation:** The compiler correctly fails to compile 100% of test cases that attempt to implicitly leak private data to the public ledger, demonstrating the effectiveness of the mandatory disclosure safety feature.  
+* **Developer SDK Usability:** A developer unfamiliar with the project can successfully set up the development environment, and build, test, and deploy one of the reference contracts within a 4-hour time-box, using only the provided SDK documentation.  
+* **Performance Baseline:** The compiler meets defined performance benchmarks for a standard reference contract:  
+  * **Compilation Time:** Compiles in under a specified time (e.g., 10 seconds) on standard developer hardware.  
+  * **Proof Generation Time:** Generates a ZK proof in under a specified time (e.g., 30 seconds).  
+  * **Proof Size:** Generates a ZK proof with a size below a specified threshold (e.g., 20 KB) to ensure on-chain feasibility.
+
+#### **III. Initial Backend Implementation (Midnight Network)**
+
+The goal is to prove the language is not just theoretical but has a concrete, working implementation on its primary target platform.
+
+* **Full Feature Integration:** All specified Ledger ADTs and Standard Library cryptographic primitives are fully functional on the Midnight Network backend, with their on-chain and off-chain components interacting correctly.  
+* **Witness FFI:** The Foreign Function Interface (FFI) for witnesses is fully implemented for TypeScript/JavaScript. It is possible to write, compile, and execute a contract that correctly calls a witness implemented in TypeScript and uses its private data.  
+* **End-to-End Deployment:** A full end-to-end deployment and execution of a reference contract on a live Midnight testnet is successful. This includes submitting the transaction with its ZK proof, having the proof verified by the network, and seeing the public state updated correctly by the Impact VM.
+
+#### **IV. Portability & Design Validation**
+
+The goal is to validate the architectural claim that Compact is not intrinsically tied to a single backend.
+
+* **Portability Proof-of-Concept (PoC):** A proof-of-concept is completed where the compiler is retargeted to a *different* backend. This could be a different ZK proving system (e.g., Groth16) or a mock blockchain environment.  
+* **Architectural Validation:** The effort to build the PoC backend is documented. Success is defined as requiring modification to fewer than 25% of the compiler's total passes, confirming the effectiveness of the Nanopass architecture for creating a backend-agnostic core.

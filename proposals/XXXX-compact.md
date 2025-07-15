@@ -83,7 +83,7 @@ The status of Compact is [incubation](https://toc.hyperledger.org/governing-docu
 
 # Solution
 Compact is a language that is designed to support a range of privacy-preserving smart contract systems.
-It has both an informal language reference (link) and a formal specification in Agda.
+It has both an informal language reference and a formal specification in Agda.
 Both of these specifications are in progress and evolving as the language changes.
 There is also an official implementation in the form of the Compact compiler, and a suite of developer tools forming a Compact software development kit (SDK).
 
@@ -92,10 +92,10 @@ The key components of the Compact language architecture are described below.
 ## The Language Reference and Formal Specification
 An official specification of the Compact language is a requirement for supporting new underlying blockchain networks.
 
-Compact is intended to have a complete, unambiguous, informal description found in the Compact Language Reference (link).
-The language reference is paired with a formal specification in Agda.
+Compact is intended to have a complete, unambiguous, informal description found in the [Compact Language Reference](https://docs.midnight.network/develop/reference/compact/lang-ref).
+The language reference is paired with a formal specification in Agda maintained in the Compact open-source repository.
 Together, these two artifacts support a deep understanding of the language on the part of programmers, contract users, and blockchain implementers.
-They additionally support development of tooling for the langauge and potentially even independent implementations of the language itself.
+They additionally support development of tooling for the language and potentially even independent implementations of the language itself.
 
 ## Witnesses for Private Data
 Compact contracts have access to private data by calling so-called "witnesses".
@@ -107,7 +107,7 @@ An off-chain implementation of a Compact contract consists of the contract's imp
 The mapping from witnesses' Compact type signatures to foreign language type signatures is predictable and will be well specified for each supported foreign language.
 
 In the specific instantiation of Compact for the Midnight Network, witnesses have TypeScript foreign type signatures and they can be implemented in either TypeScript or JavaScript.
-However, the intention is that other foreign langauges can be equally well supported.
+However, the intention is that other foreign languages can be equally well supported.
 
 ## Ledger ADTs
 The public on-chain state of a Compact contract is its so-called "ledger".

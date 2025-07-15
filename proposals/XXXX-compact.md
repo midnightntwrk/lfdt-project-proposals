@@ -187,6 +187,15 @@ However, it is not necessary that Compact uses the same implementation off and o
 The Compact compiler itself simply needs to have a backend-specific implementation of off-chain code to use for the ledger,
 and a backend-specific implementation of the on-chain code to be deployed in a contract or else submitted in a transaction, depending on how the backend blockchain works.
 
+## Open Language Design
+The open-source Compact repository will host language feature design documents.
+The Midnight Network has a process for proposing changes called the Midnight Improvement Proposal (MIP) process.
+The Compact project will use this process or a suitable variation of it to conduct language feature design in the open,
+and to allow community-driven language feature design.
+
+An example of a similar process being used successfully for programming languages can be found in the Python language community's
+[Python Enhancement Proposal (PEP)](https://peps.python.org/) process.
+
 <mark>**Effort and resources** committed (coders and any other resources that are needed) and timeline.
 </mark>
 

@@ -101,9 +101,9 @@ They additionally support development of tooling for the language and potentiall
 Compact contracts have access to private data by calling so-called "witnesses".
 Witnesses are declared in Compact and they are given Compact type signatures.
 Compact witness type signatures are a kind of foreign function interface (FFI).
-Witness implementations are intended to be provided in some general purpose programming language, which can be called from Compact programs.
+Witness implementations are intended to be provided in some foreign general purpose programming language, which can be called from Compact programs.
 
-An off-chain implementation of a Compact contract consists of the contract's implementation itself, along with some implementation of the witnesses that it uses.
+An off-chain implementation of a Compact contract consists of the contract's implementation itself in Compact, along with some implementation of the witnesses that it uses in a foreign general purpose language.
 The mapping from witnesses' Compact type signatures to foreign language type signatures is predictable and will be well specified for each supported foreign language.
 
 In the specific instantiation of Compact for the Midnight Network, witnesses have TypeScript foreign type signatures and they can be implemented in either TypeScript or JavaScript.
@@ -133,22 +133,22 @@ The implementation of the command line driver is in Rust and is part of the Comp
 There are currently a number of subcommands such as:
 
 - `install` and `upgrade` to manage versions of the compiler and related tooling
-- `compile` to compile Compact contracts
+- `compile` to compile a Compact contract
 - `format` to invoke the official Compact source-code formatter
-- `fixup` to make safe automatic repairs to contracts
+- `fixup` to make safe automatic repairs to a Compact contract
 
-The design of the SDK tooling is intended for flexibility.
+The design of the SDK tooling focuses on flexibility.
 Subcommands can potentially be implemented in any other language (e.g., Python, shell scripts, etc.) and they could be provided by third parties.
 
 ## The Compiler Implementation
 The Compact open-source project provides an official implementation of the Compact programming language.
-This implementation is a compiler implemented in the Scheme programming language.
+This compiler is implemented in the Scheme programming language.
 Scheme is used, primarily, in order to use the [Nanopass compiler framework](https://nanopass.org/documentation.html) ([GitHub](https://github.com/nanopass)).
 Nanopass is a framework intended to easily and correctly develop commercial-quality compilers.
 
 While we would not say that the barrier to entry for contributing to the Compact compiler is exactly "low",
 Nanopass compilers do have a pleasant characteristic of being quite understandable once one learns the framework.
-The compiler is structured as a number of compiler passes that each individually make a small transformation on an internal intermediate representation (IR).
+The compiler is structured as a number of compiler passes that each individually make a small transformation on an intermediate representation (IR).
 Each compiler pass is implemented as a sequence of rewrite rules that pattern matches on the input IR and generates the output IR.
 
 The current implementation of the compiler supports the Midnight Network as the underlying blockchain.

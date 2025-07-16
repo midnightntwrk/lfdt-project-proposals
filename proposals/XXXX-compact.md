@@ -14,15 +14,16 @@ version.
 - Bob Blessing-Hartley (Shielded) [<bob.blessing-hartley@shielded.io>](mailto:bob.blessing-hartley@shielded.io)
 - Joseph Denman (Shielded) [<joseph.denman@shielded.io>](mailto:joseph.denman@shielded.io)
 - Kent Dybvig (Shielded) [<kent.dybvig@shielded.io>](mailto:kent.dybvig@shielded.io)
+- Thomas Kerber (Shielded) [<thomas.kerber@shielded.io>](mailto:thomas.kerber@shielded.io)
 - Kevin Millikin (Shielded) [<kevin.millikin@shielded.io>](mailto:kevin.millikin@shielded.io)
 - Lucas Rosa (Shielded) [<lucas.rosa@shielded.io>](mailto:lucas.rosa@shielded.io)
 
 # Abstract
 **Compact** is a restricted programming language for privacy-preserving smart contracts in a decentralized blockchain.
-It was designed for the Midnight Network but it is intended to be suitable for many different privacy-preserving blockchains.
+It was designed for the Midnight Network but it is intended to be suitable for any privacy-preserving blockchain with certain similar characteristics.
 
 # Context
-The Compact programming language provides a concrete implementation of the [Kachina programming model](https://iohk.io/en/research/library/papers/kachina-foundations-of-private-smart-contracts/).
+The Compact programming language provides a concrete implementation of the [Kachina programming model](https://iohk.io/en/research/library/papers/kachina-foundations-of-private-smart-contracts/) (Kerber, Kiayias, and Kohlweiss, 2021).
 Compact is used to implement privacy-preserving smart contracts with these characteristics:
 
 - contracts are compiled to **off-chain code** that implements the full contract with access to private data;
@@ -47,7 +48,14 @@ Compact depends on a suitable underlying blockchain system, but it does not depe
 
 # Motivation
 Compact is designed to be a concrete realization of the abstract Kachina programming model.
-Three important factors influenced Compact's design: it should be safe, familiar, and restricted.
+Three important factors influenced Compact's design: it should be familiar, safe, and restricted.
+
+## Familiarity
+Compact is intended to be familiar to most developers.
+Its syntax is based on TypeScript, which in turn is based on JavaScript, Java, and ultimately C and C++.
+An explicit design goal is that the language should be unsurprising for developers who know any of these languages.
+When features of Compact are similar or analogous to features of TypeScript, we have used the same syntax.
+When features are *different*, we have intentionally used different syntax.
 
 ## Safety
 The execution of smart contracts can have real-world financial consequences.
@@ -57,16 +65,14 @@ It is therefore important that it is easy to develop correct smart contracts,
 and possible to completely understand their behavior by inspecting their source code.
 
 Compact is statically typed to help enforce correctness.
-The language has a very clear distinction between private data (called "witnesses" in Compact) and public data (called the "ledger" in Compact).
+The Compact type system is stronger than TypeScript's.
+There is no `any` type,
+type casts are checked at runtime when necessary rather than simply trusted,
+and the boundary with external code contains runtime type checks to protect the Compact code.
+
+Compact has a very clear distinction between private data (called "witnesses" in Compact) and public data (called the "ledger" in Compact).
 The language's implementation tracks private data and requires it to be explicitly disclosed by the developer before allowing it to be publicly observed.
 Failure to explicitly disclose such private data is a compilation error, preventing the contract from ever being executed.
-
-## Familiarity
-Compact is intended to be familiar to most developers.
-Its syntax is based on TypeScript, which in turn is based on JavaScript, Java, and ultimately C and C++.
-An explicit design goal is that the language should be unsurprising for developers who know any of these languages.
-When features of Compact are similar or analogous to features of TypeScript, we have used the same syntax.
-When features are *different*, we have intentionally used different syntax.
 
 ## Restriction
 The language is not a general purpose language, it is intentionally restricted.
@@ -116,6 +122,7 @@ Examples include cells containing a Compact value, integer counters, sets of Com
 
 The specific instantiation of Compact for the Midnight Network has specific builtin ledger ADTs.
 However, the design is general enough to allow other ADTs to be provided.
+The ledger ADTs are separate from the Compact compiler itself, so they can be changed without knowledge of or changes to the compiler.
 
 ## The Compact Standard Library
 Compact has a standard library which provides utilities that are generally useful in smart contracts.
@@ -142,20 +149,22 @@ Subcommands can potentially be implemented in any other language (e.g., Python, 
 
 ## The Compiler Implementation
 The Compact open-source project provides an official implementation of the Compact programming language.
-This compiler is implemented in the Scheme programming language.
-Scheme is used, primarily, in order to use the [Nanopass compiler framework](https://nanopass.org/documentation.html) ([GitHub](https://github.com/nanopass)).
+This compiler is implemented in the Scheme programming language (Dybvig 2009; Cisco Systems, Inc. 2025).
+Scheme is used, primarily, in order to use the [Nanopass compiler framework](https://nanopass.org/documentation.html) ([GitHub](https://github.com/nanopass)) (Keep and Andersen).
 Nanopass is a framework intended to easily and correctly develop commercial-quality compilers.
 
 While we would not say that the barrier to entry for contributing to the Compact compiler is exactly "low",
 Nanopass compilers do have a pleasant characteristic of being quite understandable once one learns the framework.
 The compiler is structured as a number of compiler passes that each individually make a small transformation on an intermediate representation (IR).
 Each compiler pass is implemented as a sequence of rewrite rules that pattern matches on the input IR and generates the output IR.
+The Compact compiler has an extensive test suite with essentially full coverage of the compiler.
+This test suite helps developers catch unintended changes before they are released.
 
 The current implementation of the compiler supports the Midnight Network as the underlying blockchain.
 Midnight uses a BLS-based proof system.
 Together, we will refer to the underlying blockchain and proof system as the "backend".
 
-The architecture of the Compact compiler is intended to support a different backends.
+The architecture of the Compact compiler is intended to support different backends.
 The compiler has an initial sequence of compiler passes that are generic and do not depend on the backend.
 Then, there are a relatively small number of backend-specific code generation passes that would need to be implemented differently for a different underlying blockchain system.
 
@@ -189,7 +198,7 @@ and a backend-specific implementation of the on-chain code to be deployed in a c
 
 ## Open Language Design
 The open-source Compact repository will host language feature design documents.
-The Midnight Network has a process for proposing changes called the Midnight Improvement Proposal (MIP) process.
+The Midnight Network has a process for proposing changes called the Midnight Improvement Proposal (MIP) process (The Midnight Foundation, 2025).
 The Compact project will use this process or a suitable variation of it to conduct language feature design in the open,
 and to allow community-driven language feature design.
 
@@ -200,20 +209,19 @@ An example of a similar process being used successfully for programming language
 </mark>
 
 # How To
-<mark>**How to**: How to host and test the project.
-How to deploy and use.
-How does one know that it works.
-</mark>
+[TODO. We are in the process of open-sourcing the Compact repository, hopefully in the next few weeks.]
 
 # References
-<mark>**References**. See [citation guide](http://www.chicagomanualofstyle.org/tools_citationguide.html).
-</mark>
 
-TODO, suggestions:
-- Chez Scheme or TSPL?
-- Nanopass framework?
-- MIP repository?
-- The long Kachina paper?
+Cisco Systems, Inc. 2025. *Chez Scheme Version 10 User's Guide.*  Available online at [cisco.github.io/ChezScheme/csug](https://cisco.github.io/ChezScheme/csug/).
+
+Dybvig, R. Kent. 2009. *The Scheme Programming Language.* The MIT Press. Available online at [www.scheme.com/tspl4](https://www.scheme.com/tspl4/).
+
+Keep, Andrew W. and Leif Andersen. Available online at [docs.racket-lang.org/nanopass](https://docs.racket-lang.org/nanopass/).
+
+Kerber, Thomas, Aggelos Kiayias, and Markulf Kohlweiss. 2021. *Kachina - Foundations of Private Smart Contracts.* 34th IEEE Computer Security Foundations Symposium.  Available from [iohk.io/en/research/library/papers/kachina-foundations-of-private-smart-contracts](https://iohk.io/en/research/library/papers/kachina-foundations-of-private-smart-contracts/).
+
+The Midnight Foundation. *Midnight Improvement Proposal (MIP) Process.* GitHub repository at [github.com/midnightntwrk/midnight-improvement-proposals](https://github.com/midnightntwrk/midnight-improvement-proposals).
 
 # Closure: Success Criteria for Compact
 The Compact project will be considered successfully completed when the following measurable criteria have been met.
@@ -233,7 +241,9 @@ These criteria are organized by the major deliverables and goals of the project.
 
    The goal is to provide a robust, correct, and usable compiler and set of tools for developers.
 
-   1. **Compiler Correctness and Test Coverage:** The compiler's test suite achieves a minimum of 90% code coverage.
+   1. **Compiler Correctness and Test Coverage:** The compiler's test suite achieves a minimum of 90% code coverage, excluding self-diagnostic code.
+      (The compiler contains code for reporting cases where the compiler itself is broken, which is unreachable by Compact source code tests.
+      We cannot expect to test this code in a realistic way.)
       This suite must include tests for all language features, error conditions, and optimizations.
 
    1. **Reference Contracts:** At least 5 non-trivial reference smart contracts, covering key use cases (e.g., a private token, a sealed-bid auction, a multi-sig wallet), successfully compile, generate valid ZK proofs, and execute correctly on the target backend (Midnight Network).

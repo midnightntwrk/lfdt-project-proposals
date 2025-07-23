@@ -15,7 +15,7 @@ parent: Incubation
 
 # Abstract
 **Compact** is a restricted programming language for privacy-preserving smart contracts in a decentralized blockchain.
-It was designed for the Midnight Network but it is intended to be suitable for any privacy-preserving blockchain with certain similar characteristics described below.
+It was designed for the Midnight Network but it is intended to be suitable for any privacy-preserving blockchain with certain similar characteristics (the ones described in the next section).
 
 # Context
 The Compact programming language provides a concrete implementation of the [Kachina programming model](https://iohk.io/en/research/library/papers/kachina-foundations-of-private-smart-contracts/) (Kerber, Kiayias, and Kohlweiss, 2021).
@@ -31,7 +31,7 @@ The characteristics listed above are concretely realized in the following ways:
 
 - Compact contracts are compiled to off-chain JavaScript code;
 - on-chain code is implemented by the Midnight Network's [Impact Virtual Machine (VM)](https://docs.midnight.network/develop/how-midnight-works/impact);
-- an implementation of the BLS12-381 proving system is used for ZK proofs; and
+- an implementation of the PLONK proving system is used for ZK proofs; and
 - the Midnight Network's blockchain is used to verify ZK proofs and execute the public part of the contract on chain.
 
 However, this is merely the specific implementation of Compact in the Midnight Network.
@@ -76,11 +76,11 @@ First, there is an underlying zero-knowledge proving system, which will have som
 Second, there is an intended blockchain which will have restrictions on the work that can be done as part of a transaction, depending on characteristics such as block size, consensus model, etc.
 Blockchain restrictions can also be required in order to accurately charge fees for transactions and to prevent denial of service attacks on the blockchain.
 
-The current implementation of Compact has the specific restrictions of the Midnight Network blockchain and its underlying BLS proving system.
+The current implementation of Compact has the specific restrictions of the Midnight Network blockchain and its underlying PLONK proving system.
 However, Compact itself is intended to be able to use "pragmas" in a contract's implementation to choose different restrictions.
 
 # Status
-The status of Compact is [incubation](https://toc.hyperledger.org/governing-documents/project-lifecycle.html#incubation)
+The status of Compact is [proposed](https://toc.hyperledger.org/governing-documents/project-lifecycle.html#proposal)
 
 # Solution
 Compact is a language that is designed to support a range of privacy-preserving smart contract systems.
@@ -156,12 +156,13 @@ The Compact compiler has an extensive test suite with essentially full coverage 
 This test suite helps developers catch unintended changes before they are released.
 
 The current implementation of the compiler supports the Midnight Network as the underlying blockchain.
-Midnight uses a BLS-based proof system.
+Midnight uses the PLONK proof system.
 Together, we will refer to the underlying blockchain and proof system as the "backend".
 
 The architecture of the Compact compiler is intended to support different backends.
 The compiler has an initial sequence of compiler passes that are generic and do not depend on the backend.
 Then, there are a relatively small number of backend-specific code generation passes that would need to be implemented differently for a different underlying blockchain system.
+For instance, in the Compact implementation for the Midnight Network, there are two Midnight-specific TypeScript passes and one Midnight-specific ZKIR pass.
 
 The specific implementation of the key components of the Compact architecture is described below.
 
@@ -173,7 +174,7 @@ The compiler generates Midnight-specific wrappers for the TypeScript or JavaScri
 The compiler passes used to generate JavaScript, the specific implementation of a Compact runtime used, and the witness wrapper implementations can all be replaced with alternative backend-specific equivalents.
 
 ### ZK proofs
-The Midnight network uses a BLS proving system.
+The Midnight network uses the PLONK proving system.
 The Compact compiler has code generation passes to generate an intermediate representation for this proving system.
 This representation is called ZKIR (the **Z**ero **K**nowledge **I**ntermediate **R**epresentation).
 
@@ -200,8 +201,35 @@ and to allow community-driven language feature design.
 An example of a similar process being used successfully for programming languages can be found in the Python language community's
 [Python Enhancement Proposal (PEP)](https://peps.python.org/) process.
 
-<mark>**Effort and resources** committed (coders and any other resources that are needed) and timeline.
-</mark>
+# Effort and Resources
+
+Given the imminent release of Compact 1.0 as the smart contract language for Midnight,
+Compact should be considered an incubation project because the core concepts are production-ready for at least one chain.
+Midnight has an extensive network of partners actively developing solutions in Compact in preparation for the Midnight launch.
+We recognize that the next phases of Compact’s evolution for cross-blockchain success requires strong governance - not just technical development.
+It is for this reason that we are bringing the released version Compact 1.0 to the Linux Foundation.
+
+It is acknowledged that the cross-chain aspirations will require some research which is beyond the scope of Shielded Technologies and it is our hope that through the LFDT we can collaborate across the blockchain ecosystem to standardize the ways in which programmable privacy for blockchains is accomplished. 
+
+A high level estimate of effort and resources based on current state of compact is as follows:
+- **69,000+ lines** of mature Scheme compiler code
+- **Production-ready** with comprehensive CI/CD (17+ GitHub workflows)
+- **Version 0.24.104** with active development preparing for 1.0 release in Q3
+- **Nanopass architecture** - excellent foundation for multi-target compilation
+
+## Major Areas of Focus
+- Cross-blockchain abstraction layer
+- Multi-target compiler backends
+- Cross-chain security
+- Developer experience & tooling
+
+## Foundation Phase
+- **Resources:** Compiler experts, blockchain protocol engineers, cryptography specialists
+- **Focus:** Cross-blockchain abstraction layer, multi-target architecture
+
+## Implementation
+- **Resources:** Expanded participation to include  security, developer experience, and testing specialists
+- **Focus:** Multi-blockchain backends, security audits, developer tooling
 
 # How To
 [TODO. We are in the process of open-sourcing the Compact repository, hopefully in the next few weeks.]

@@ -4,14 +4,16 @@ title: The Compact Programming Language
 parent: Incubation
 ---
 
-# Sponsor(s)
+# Sponsors
 - Parisa Ataei (Shielded) [<parisa.ataei@shielded.io>](mailto:parisa.ataei@shielded.io)
 - Bob Blessing-Hartley (Shielded) [<bob.blessing-hartley@shielded.io>](mailto:bob.blessing-hartley@shielded.io)
 - Joseph Denman (Shielded) [<joseph.denman@shielded.io>](mailto:joseph.denman@shielded.io)
 - Kent Dybvig (Shielded) [<kent.dybvig@shielded.io>](mailto:kent.dybvig@shielded.io)
 - Thomas Kerber (Shielded) [<thomas.kerber@shielded.io>](mailto:thomas.kerber@shielded.io)
+- Pi Lanningham (SundaeSwap Labs) [<pi@sundae.fi>](mailto:pi@sundae.fi)
 - Kevin Millikin (Shielded) [<kevin.millikin@shielded.io>](mailto:kevin.millikin@shielded.io)
 - Lucas Rosa (Shielded) [<lucas.rosa@shielded.io>](mailto:lucas.rosa@shielded.io)
+- Emanuel Solis (OpenZeppelin) [<esolis6114@gmail.com>](mailto:esolis6114@gmail.com)
 
 # Abstract
 **Compact** is a restricted programming language for privacy-preserving smart contracts in a decentralized blockchain.

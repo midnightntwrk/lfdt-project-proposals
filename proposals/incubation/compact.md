@@ -1,13 +1,8 @@
 ---
 layout: default
 title: The Compact Programming Language
-parent: Hyperledger Improvement Proposals
+parent: Incubation
 ---
-
-# HIP Identifier
-<mark>**HIP identifier** a short description plus a serial number with a
-version.
-</mark>
 
 # Sponsor(s)
 - Parisa Ataei (Shielded) [<parisa.ataei@shielded.io>](mailto:parisa.ataei@shielded.io)
@@ -20,7 +15,7 @@ version.
 
 # Abstract
 **Compact** is a restricted programming language for privacy-preserving smart contracts in a decentralized blockchain.
-It was designed for the Midnight Network but it is intended to be suitable for any privacy-preserving blockchain with certain similar characteristics.
+It was designed for the Midnight Network but it is intended to be suitable for any privacy-preserving blockchain with certain similar characteristics described below.
 
 # Context
 The Compact programming language provides a concrete implementation of the [Kachina programming model](https://iohk.io/en/research/library/papers/kachina-foundations-of-private-smart-contracts/) (Kerber, Kiayias, and Kohlweiss, 2021).
@@ -40,7 +35,7 @@ The characteristics listed above are concretely realized in the following ways:
 - the Midnight Network's blockchain is used to verify ZK proofs and execute the public part of the contract on chain.
 
 However, this is merely the specific implementation of Compact in the Midnight Network.
-The language itself is designed to be generically used in any privacy-preserving smart contract system that is sufficiently similar,
+The language itself is designed to be generically used in any privacy-preserving smart contract system that is sufficiently similar (i.e., having the characteristics described above),
 and all of these implementation characteristics can be varied to suit other privacy-preserving smart contract systems.
 
 # Dependent Projects

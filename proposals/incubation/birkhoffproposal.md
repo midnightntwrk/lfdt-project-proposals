@@ -13,7 +13,7 @@ Birkhoff is an open-source initiative developing a post-quantum zero-knowledge p
 Birkhoff aims to advance the state of zero-knowledge proof technology by developing a system that addresses the fundamental trade-offs between prover time, proof size, and verifier cost. The lab's scope encompasses:
 
 **Core Research and Development:**
-- Development of a lattice-based folding protocol (NEO) for post-quantum security
+- Development of a lattice-based folding protocol (NEO or similar) for post-quantum security
 - Implementation of a lookup-centric arithmetization system for computational efficiency
 - Creation of a unified compilation target supporting R1CS, PLONKish, and AIR circuits
 - Research into practical aggregation techniques for multiple proofs
@@ -31,7 +31,7 @@ Birkhoff aims to advance the state of zero-knowledge proof technology by develop
 - Documentation and learning resources for the ZK community
 
 **Practical Deployment:**
-- Multi-platform verification support (EVM, Move, WASM, Plutus)
+- Multi-platform verification support (EVM, Move, WASM, Plutus, Compact (AKA Project Mitra))
 - On-chain integration strategies with realistic gas cost targets
 - Proof aggregation for blockchain scalability applications
 - Data availability proof generation for rollup systems
@@ -45,25 +45,28 @@ Birkhoff aims to advance the state of zero-knowledge proof technology by develop
 The lab operates within LF Decentralized Trust's mission by advancing open-source cryptographic infrastructure that enables privacy, scalability, and trust in decentralized systems. Birkhoff focuses on practical, deployable solutions that can be adopted by the broader blockchain and Web3 ecosystem.
 
 # Initial Committers
-_Enter the Github IDs for the set of initial committers._
 - https://github.com/bobblessinghartley (Shielded Techonlogies)
-- https://github.com/<user_id2>
+- https://github.com/SebastienGllmt (Midnight Foundation)
+- https://github.com/iquerejeta (Shielded Technologies)
+- IOG (Aggelos?)
+- Google
+- Microsoft (Dimitar?)
+- Stanford University...
+- E
 - ...
 
 # Sponsor
-_Provide the name of your sponsor. A sponsor is optional, but the sponsor must be a maintainer of one of the LF Decentralized Trust projects, a TAC member, or a SIG chair. Read about sponsors' duty in [Section 3, Labs proposal](./index.md#process-to-propose-a-new-lab)._
 - https://github.com/bobblessinghartley  - Role: LFDT Board Member and TSC member for Mitra 
 
 # Pre-existing repository
-_If you currently have a Github repository that you wish to transfer to the LF Decentralized Trust Labs organization, please provide a link here. **NOTE: Please refer to the README for additional information on existing repositories.**_
-- https://github.com/<your_repo>
+Not applicable
 
 # Technical Approach and Realistic Goals
 
 ## Core Architecture
-Birkhoff employs a hybrid approach that combines the best aspects of existing proof systems while acknowledging practical constraints:
+Birkhoff will employ a hybrid approach that combines the best aspects of existing proof systems while acknowledging practical constraints:
 
-**NEO Protocol (Lattice-Based Folding):**
+**NEO or Similar Protocol (Lattice-Based Folding):**
 - Based on the Module-SIS assumption for post-quantum security
 - Uses sum-check folding for efficient proof aggregation
 - Implements pay-per-bit commitments for granular efficiency
@@ -95,24 +98,24 @@ Birkhoff acknowledges the fundamental trade-offs in zero-knowledge proof systems
 - Provides migration paths from existing systems
 
 ## Development Timeline
-The lab follows a realistic, phased development approach:
+The lab intends, as an early work item, to define a realistic, phased development approach:
 
-**Phase 1 (6 months):**
+**Phase 1 (n months):**
 - Core cryptographic research and protocol specification
 - Basic Rust SDK framework and development tools
 - Community engagement and initial documentation
 
-**Phase 2 (12 months):**
+**Phase 2 (n months):**
 - Reference implementation of the NEO protocol
 - Circuit compilation adapters for major arithmetizations
 - Performance benchmarking and optimization
 
-**Phase 3 (18 months):**
+**Phase 3 (n months):**
 - Production-ready SDK with comprehensive tooling
 - Multi-platform verification support
 - Security audits and formal verification
 
-**Phase 4 (24 months):**
+**Phase 4 (n months):**
 - Advanced features (proof aggregation, IVC)
 - Hardware acceleration and optimization
 - Production deployment and ecosystem integration

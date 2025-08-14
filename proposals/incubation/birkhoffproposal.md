@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Lab Proposal Template
+title: Project Birkhoff
 parent: LFDT Labs
 grand_parent: Active Labs
 ---

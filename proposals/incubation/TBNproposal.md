@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Project Birkhoff
+title: Project To Be Named (TBN)
 parent: LFDT Labs
 grand_parent: Active Labs
 ---
-# Project Birkhoff
+# Project TBN
 
 # Short Description
 Birkhoff is an open-source initiative developing a post-quantum zero-knowledge proving system that balances performance, security, and practical deployment constraints. The project focuses on creating a transparent, lattice-based architecture that provides realistic performance improvements while maintaining post-quantum security guarantees.
@@ -49,7 +49,7 @@ The lab operates within LF Decentralized Trust's mission by advancing open-sourc
 - https://github.com/SebastienGllmt (Midnight Foundation)
 - https://github.com/iquerejeta (Shielded Technologies)
 - IOG (Aggelos?)
-- Google
+- Google 
 - Microsoft (Dimitar?)
 - Stanford University...
 - E

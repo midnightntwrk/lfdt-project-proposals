@@ -13,7 +13,7 @@ TBN is an open-source initiative developing a post-quantum zero-knowledge provin
 TBN aims to advance the state of zero-knowledge proof technology by developing a system that addresses the fundamental trade-offs between prover time, proof size, and verifier cost. The lab's scope encompasses:
 
 **Core Research and Development:**
-- Development of a lattice-based folding protocol (NEO or similar) for post-quantum security
+- Development of a lattice-based folding protocol (NEO, LatticeFold+ or similar) for post-quantum security
 - Implementation of a lookup-centric arithmetization system for computational efficiency
 - Creation of a unified compilation target supporting R1CS, PLONKish, and AIR circuits
 - Research into practical aggregation techniques for multiple proofs

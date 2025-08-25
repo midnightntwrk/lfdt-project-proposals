@@ -51,8 +51,7 @@ The lab operates within LF Decentralized Trust's mission by advancing open-sourc
 - IOG (Aggelos?)
 - Google 
 - Microsoft (Dimitar?)
-- Stanford University (Prof. Dan Boneh)
-- E
+- https://github.com/dabo (Stanford University - Prof. Dan Boneh)
 - ...
 
 # Sponsor

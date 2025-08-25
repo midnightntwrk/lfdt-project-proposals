@@ -51,7 +51,7 @@ The lab operates within LF Decentralized Trust's mission by advancing open-sourc
 - IOG (Aggelos?)
 - Google 
 - Microsoft (Dimitar?)
-- Stanford University...
+- Stanford University (Prof. Dan Boneh)
 - E
 - ...
 
@@ -66,20 +66,23 @@ Not applicable
 ## Core Architecture
 TBN will employ a hybrid approach that combines the best aspects of existing proof systems while acknowledging practical constraints:
 
-**NEO or Similar Protocol (Lattice-Based Folding):**
+**LatticeFold, Neo, or Similar Protocol (Lattice-Based Folding):**
+- Employs the lattice-based Ajtai hash for efficient folding
 - Based on the Module-SIS assumption for post-quantum security
 - Uses sum-check folding for efficient proof aggregation
 - Implements pay-per-bit commitments for granular efficiency
 - Supports incremental verification for long computations
 
 **Lookup-Centric Arithmetization:**
+- Arithmetization should take advantage of repeated structure in the target computation, beyond what is supported by the CCS format (for example, repeated structure inside the SHA256 circuit)
 - Unifies diverse computational models into a single lookup-based format
 - Enables efficient compilation from R1CS, PLONKish, and AIR
 - Optimizes for GPU acceleration and parallel processing
 - Reduces circuit complexity for common operations
 
 **Performance Targets (Realistic):**
-- Proof generation: 2-5 seconds for 2^14 gates on consumer hardware
+- **Comment: if the goal is a folding-based architecture, then perhaps all performance targets should be stated in terms of a single folding step.**
+- Proof generation: 2-5 seconds for 2^14 gates on consumer hardware 
 - Proof size: 10-50 KB depending on security level and complexity
 - Verification cost: <50,000 gas on Ethereum, scalable for other platforms
 - Aggregation: Support for 100-1000 proofs with logarithmic growth
@@ -106,7 +109,7 @@ The lab intends, as an early work item, to define a realistic, phased developmen
 - Community engagement and initial documentation
 
 **Phase 2 (n months):**
-- Reference implementation of the NEO protocol
+- Reference implementation of the LatticeFold/NEO protocol
 - Circuit compilation adapters for major arithmetizations
 - Performance benchmarking and optimization
 

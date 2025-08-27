@@ -52,6 +52,7 @@ The lab operates within LF Decentralized Trust's mission by advancing open-sourc
 - Google 
 - Microsoft (Dimitar?)
 - https://github.com/dabo (Stanford University - Prof. Dan Boneh)
+- https://github.com/nicarq (Shinkai)
 - ...
 
 # Sponsor

@@ -21,12 +21,14 @@ TBN aims to advance the state of zero-knowledge proof technology by developing a
 **Performance Optimization:**
 - Hardware-software co-design for CPU and GPU acceleration
 - Small-field arithmetic optimization using the 64-bit Goldilocks field
+- GPU-friendly Residue Number System (RNS) modular arithmetic 
 - Memory-efficient proving strategies for large-scale computations
 - Incrementally Verifiable Computation (IVC) support for long-running processes
 
 **Developer Experience:**
 - Rust-native SDK with comprehensive tooling
 - Migration paths from existing proof systems (Halo 2, PLONK, STARKs)
+- Transpiler tools for converting Plonkish circuits to CCS
 - Debugging and development tools for circuit construction
 - Documentation and learning resources for the ZK community
 

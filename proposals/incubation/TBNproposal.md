@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Project To Be Named (TBN)
+title: NightStream Lab
 parent: LFDT Labs
 grand_parent: Active Labs
 ---
-# Project TBN
+# Project NightStream
 
 # Short Description
-TBN is an open-source initiative developing a post-quantum zero-knowledge proving system that balances performance, security, and practical deployment constraints. The project focuses on creating a transparent, lattice-based architecture that provides realistic performance improvements while maintaining post-quantum security guarantees.
+NightStream is an open-source initiative developing a post-quantum zero-knowledge proving system that balances performance, security, and practical deployment constraints. The project focuses on creating a transparent, lattice-based architecture that provides realistic performance improvements while maintaining post-quantum security guarantees.
 
 # Scope of Lab
-TBN aims to advance the state of zero-knowledge proof technology by developing a system that addresses the fundamental trade-offs between prover time, proof size, and verifier cost. The lab's scope encompasses:
+NightStream aims to advance the state of zero-knowledge proof technology by developing a system that addresses the fundamental trade-offs between prover time, proof size, and verifier cost. The lab's scope encompasses:
 
 **Core Research and Development:**
 - Development of a lattice-based folding protocol (NEO, LatticeFold+ or similar) for post-quantum security
@@ -42,7 +42,7 @@ TBN aims to advance the state of zero-knowledge proof technology by developing a
 - Community-driven security audits and peer review
 - Compliance with emerging post-quantum standards
 
-The lab operates within LF Decentralized Trust's mission by advancing open-source cryptographic infrastructure that enables privacy, scalability, and trust in decentralized systems. TBN focuses on practical, deployable solutions that can be adopted by the broader blockchain and Web3 ecosystem.
+The lab operates within LF Decentralized Trust's mission by advancing open-source cryptographic infrastructure that enables privacy, scalability, and trust in decentralized systems. NightStream focuses on practical, deployable solutions that can be adopted by the broader blockchain and Web3 ecosystem.
 
 # Initial Committers
 - https://github.com/bobblessinghartley (Shielded Techonlogies)
@@ -64,7 +64,7 @@ Not applicable
 # Technical Approach and Realistic Goals
 
 ## Core Architecture
-TBN will employ a hybrid approach that combines the best aspects of existing proof systems while acknowledging practical constraints:
+NightStream will employ a hybrid approach that combines the best aspects of existing proof systems while acknowledging practical constraints:
 
 **LatticeFold, Neo, or Similar Protocol (Lattice-Based Folding):**
 - Employs the lattice-based Ajtai hash for efficient folding
@@ -88,7 +88,7 @@ TBN will employ a hybrid approach that combines the best aspects of existing pro
 - Aggregation: Support for 100-1000 proofs with logarithmic growth
 
 ## Security Considerations
-TBN acknowledges the fundamental trade-offs in zero-knowledge proof systems:
+NightStream acknowledges the fundamental trade-offs in zero-knowledge proof systems:
 
 **Post-Quantum Security:**
 - Lattice-based cryptography with configurable security levels (L1, L3, L5)
@@ -124,7 +124,7 @@ The lab intends, as an early work item, to define a realistic, phased developmen
 - Production deployment and ecosystem integration
 
 ## Community and Governance
-TBN operates as an open, community-driven project following the these key principals:
+NightStream operates as an open, community-driven project following the these key principals:
 
 **Open Development:**
 - All code and specifications are open source
@@ -144,7 +144,7 @@ TBN operates as an open, community-driven project following the these key princi
 - Support for developer tools and frameworks
 - Educational resources and training materials
 
-This approach ensures that TBN delivers practical value to the decentralized trust ecosystem while maintaining realistic expectations about performance, security, and deployment complexity.
+This approach ensures that NightStrean delivers practical value to the decentralized trust ecosystem while maintaining realistic expectations about performance, security, and deployment complexity.
 
 **Future Growth**
 As the project matures and its community grows, we will follow the guidelines to transition from a Labs project to a full, incubating LFDT project, given the scope of the labs, potentially multiple, related projects. Our goal is to build a foundation that can scale and become a long-term, self-sustaining part of the LFDT ecosystem.

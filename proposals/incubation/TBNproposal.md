@@ -48,12 +48,9 @@ The lab operates within LF Decentralized Trust's mission by advancing open-sourc
 - https://github.com/bobblessinghartley (Shielded Techonlogies)
 - https://github.com/SebastienGllmt (Midnight Foundation)
 - https://github.com/iquerejeta (Shielded Technologies)
-- IOG (Aggelos?)
-- Google 
-- Microsoft (Dimitar?)
+- https://github.com/solegga (Input Output Global, University of Edinburgh
 - https://github.com/dabo (Stanford University - Prof. Dan Boneh)
 - https://github.com/nicarq (Shinkai)
-- ...
 
 # Sponsor
 - https://github.com/bobblessinghartley  - Role: LFDT Board Member and TSC member for Mitra 

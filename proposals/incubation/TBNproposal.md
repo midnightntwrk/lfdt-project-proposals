@@ -7,14 +7,14 @@ grand_parent: Active Labs
 # Project NightStream
 
 # Short Description
-NightStream is an open-source initiative developing a post-quantum zero-knowledge proving system that balances performance, security, and practical deployment constraints. The project focuses on creating a transparent, lattice-based architecture that provides realistic performance improvements while maintaining post-quantum security guarantees.
+NightStream is an open-source initiative developing a post-quantum zero-knowledge proof system that balances performance, security, and practical deployment constraints. The project focuses on creating a transparent, lattice-based architecture that provides realistic performance improvements while maintaining post-quantum security guarantees.
 
 # Scope of Lab
 NightStream aims to advance the state of zero-knowledge proof technology by developing a system that addresses the fundamental trade-offs between prover time, proof size, and verifier cost. The lab's scope encompasses:
 
 **Core Research and Development:**
 - Development of a lattice-based folding protocol (NEO, LatticeFold+ or similar) for post-quantum security
-- Implementation of a lookup-centric arithmetization system for computational efficiency
+- Incorporation of lookup-centric arithmetization for computational efficiency
 - Creation of a unified compilation target supporting R1CS, PLONKish, and AIR circuits
 - Research into practical aggregation techniques for multiple proofs
 
@@ -26,7 +26,7 @@ NightStream aims to advance the state of zero-knowledge proof technology by deve
 
 **Developer Experience:**
 - Rust-native SDK with comprehensive tooling
-- Migration paths from existing proof systems (Halo 2, PLONK, STARKs)
+- Migration paths from existing proof systems (including Halo 2, PLONK, STARKs)
 - Debugging and development tools for circuit construction
 - Documentation and learning resources for the ZK community
 
@@ -38,7 +38,7 @@ NightStream aims to advance the state of zero-knowledge proof technology by deve
 
 **Security and Standards:**
 - Post-quantum cryptographic parameter selection and validation
-- Formal security analysis of the NEO and other related protocols
+- Formal security analysis of critical components and protocols
 - Community-driven security audits and peer review
 - Compliance with emerging post-quantum standards
 
@@ -105,6 +105,7 @@ The lab intends, as an early work item, to define a realistic, phased developmen
 
 **Phase 1 (n months):**
 - Core cryptographic research and protocol specification
+- Formal security framework and modelling
 - Basic Rust SDK framework and development tools
 - Community engagement and initial documentation
 
@@ -116,7 +117,7 @@ The lab intends, as an early work item, to define a realistic, phased developmen
 **Phase 3 (n months):**
 - Production-ready SDK with comprehensive tooling
 - Multi-platform verification support
-- Security audits and formal verification
+- Security audits 
 
 **Phase 4 (n months):**
 - Advanced features (proof aggregation, IVC)

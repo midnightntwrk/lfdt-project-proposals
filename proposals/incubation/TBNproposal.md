@@ -49,7 +49,7 @@ The lab operates within LF Decentralized Trust's mission by advancing open-sourc
 - https://github.com/SebastienGllmt (Midnight Foundation)
 - https://github.com/iquerejeta (Shielded Technologies)
 - https://github.com/solegga (Input Output, University of Edinburgh)
-- https://github.com/dabo (Stanford University - Prof. Dan Boneh)
+- https://github.com/dabo (Stanford Universit)
 - https://github.com/nicarq (Shinkai)
 
 # Sponsor

@@ -48,7 +48,7 @@ The lab operates within LF Decentralized Trust's mission by advancing open-sourc
 - https://github.com/bobblessinghartley (Shielded Techonlogies)
 - https://github.com/SebastienGllmt (Midnight Foundation)
 - https://github.com/iquerejeta (Shielded Technologies)
-- https://github.com/solegga (Input Output Global, University of Edinburgh
+- https://github.com/solegga (Input Output, University of Edinburgh)
 - https://github.com/dabo (Stanford University - Prof. Dan Boneh)
 - https://github.com/nicarq (Shinkai)
 
@@ -77,12 +77,11 @@ NightStream will employ a hybrid approach that combines the best aspects of exis
 - Optimizes for GPU acceleration and parallel processing
 - Reduces circuit complexity for common operations
 
-**Performance Targets (Realistic):**
-- **Comment: if the goal is a folding-based architecture, then perhaps all performance targets should be stated in terms of a single folding step.**
-- Proof generation: 2-5 seconds for 2^14 gates on consumer hardware 
-- Proof size: 10-50 KB depending on security level and complexity
-- Verification cost: <50,000 gas on Ethereum, scalable for other platforms
-- Aggregation: Support for 100-1000 proofs with logarithmic growth
+**Performance Targets (Indicative):**
+- Proof generation: a few seconds for relevant use cases on consumer hardware 
+- Proof size: order of tens of KBs depending on security level and complexity
+- Verification cost: scalable and competitive for utilization within main smart contract platforms
+- Aggregation: unbounded number of folding operations with logarithmic growth
 
 ## Security Considerations
 NightStream acknowledges the fundamental trade-offs in zero-knowledge proof systems:

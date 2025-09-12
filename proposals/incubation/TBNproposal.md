@@ -48,6 +48,7 @@ The lab operates within LF Decentralized Trust's mission by advancing open-sourc
 - https://github.com/bobblessinghartley (Shielded Techonlogies)
 - https://github.com/SebastienGllmt (Midnight Foundation)
 - https://github.com/iquerejeta (Shielded Technologies)
+- https://github.com/djetchev (Input Output/CyAIber Sarl)
 - https://github.com/solegga (Input Output, University of Edinburgh)
 - https://gitbuh.com/berewt (Input Output)
 - https://github.com/dabo (Stanford University)
@@ -65,7 +66,8 @@ Not applicable
 NightStream will employ a hybrid approach that combines the best aspects of existing proof systems while acknowledging practical constraints:
 
 **LatticeFold, Neo, or Similar Protocol (Lattice-Based Folding):**
-- Employs the lattice-based Ajtai hash for efficient folding
+- Use Custom Constraint System (CCS) arithmetization compatible with R1CS, PLONKish and AIR
+- Employs the lattice-based Ajtai commitments for efficient folding
 - Based on the Module-SIS assumption for post-quantum security
 - Uses sum-check folding for efficient proof aggregation
 - Implements pay-per-bit commitments for granular efficiency
@@ -142,7 +144,7 @@ NightStream operates as an open, community-driven project following the these ke
 - Support for developer tools and frameworks
 - Educational resources and training materials
 
-This approach ensures that NightStrean delivers practical value to the decentralized trust ecosystem while maintaining realistic expectations about performance, security, and deployment complexity.
+This approach ensures that NightStream delivers practical value to the decentralized trust ecosystem while maintaining realistic expectations about performance, security, and deployment complexity.
 
 **Future Growth**
 As the project matures and its community grows, we will follow the guidelines to transition from a Labs project to a full, incubating LFDT project, given the scope of the labs, potentially multiple, related projects. Our goal is to build a foundation that can scale and become a long-term, self-sustaining part of the LFDT ecosystem.
